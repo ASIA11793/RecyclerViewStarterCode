@@ -3,16 +3,18 @@ package com.example.recyclerviewstudentversion;
 public class Player {
     private String name;
     private int age;
-    private int worth;
+    private long worth;
     private String mainSport;
     private int image;
+    private String wiki;
 
-    public Player(String a, int b,int c,String d,int f){
+    public Player(String a, int b,long c,String d,int f,String w){
         name=a;
         age=b;
         worth=c;
         mainSport=d;
         image=f;
+        wiki=w;
     }
 
     public String getName(){
@@ -21,7 +23,7 @@ public class Player {
     public int getage(){
         return age;
     }
-    public int getWorth(){
+    public long getWorth(){
         return worth;
     }
     public String getMainsport(){
@@ -36,9 +38,7 @@ public class Player {
     public void setAge(int s){
         age=s;
     }
-    public void setWorth(int s){
-        worth=s;
-    }
+    public void setWorth(int s){ worth=s; }
     public void setMainSport(String s){
         mainSport=s;
     }

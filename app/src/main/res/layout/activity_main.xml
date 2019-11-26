@@ -1,3 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--  Todo add recycler view -->
-<!--  Todo add another xml file that will hold single_player_view -->
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:id="@+id/recy"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+</androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+
+
+
+
+
+
+
