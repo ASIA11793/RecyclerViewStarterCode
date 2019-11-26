@@ -1,6 +1,12 @@
 package com.example.recyclerviewstudentversion;
 
 public class Player {
+    private String name;
+    private int age;
+    private int worth;
+    private String mainSport;
+    private int image;
+
     public Player(String a, int b,int c,String d,int f){
         name=a;
         age=b;
@@ -8,11 +14,7 @@ public class Player {
         mainSport=d;
         image=f;
     }
-    private String name;
-    private int age;
-    private int worth;
-    private String mainSport;
-    private int image;
+
     public String getName(){
         return name;
     }
