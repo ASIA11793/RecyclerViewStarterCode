@@ -6,10 +6,6 @@
     android:scrollbars="vertical"
     android:id="@+id/recy"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-
-
 </androidx.recyclerview.widget.RecyclerView>
 
 

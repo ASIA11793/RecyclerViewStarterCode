@@ -32,6 +32,7 @@ public class Player {
     public int getImage(){
         return image;
     }
+    public String getwiki(){return wiki;}
     public void setName(String s){
         name=s;
     }
@@ -45,6 +46,8 @@ public class Player {
     public void setImage(int s){
         image=s;
     }
+    public void setwiki (String w){wiki=w;}
+
 
 
 
