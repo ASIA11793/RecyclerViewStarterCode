@@ -27,17 +27,11 @@ public class MainActivity extends AppCompatActivity {
         layoutManager=new GridLayoutManager(this,1);
         recyclerView.setLayoutManager(layoutManager);
 
-
-
-
-
-
-
     }
 
 
         private void fillplayers(){
-        list.add(new Player("Usain St Leo Bolt",33,(long)90000000,"Track and Field",R.drawable.bolt,"https://en.wikipedia.org/wiki/Usain_Bolt"));
+            list.add(new Player("Usain St Leo Bolt",33,(long)90000000,"Track and Field",R.drawable.bolt,"https://en.wikipedia.org/wiki/Usain_Bolt"));
             list.add(new Player("Kobe Bryant",41,(long)500000000,"Basketball",R.drawable.kobe,"https://en.wikipedia.org/wiki/Kobe_Bryant"));
             list.add(new Player("Lionel Andrés Messi Cuccittini",32,(long)400000000,"Football",R.drawable.mesi,"https://en.wikipedia.org/wiki/Lionel_Messi"));
             list.add(new Player("Cristiano Ronaldo dos Santos Aveiro",34,(long)108000000,"Football",R.drawable.ronaldo,"https://en.wikipedia.org/wiki/Cristiano_Ronaldo"));
