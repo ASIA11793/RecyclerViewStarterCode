@@ -1,18 +1,22 @@
 package com.example.recyclerviewstudentversion;
 
 public class Player {
-    public Player(String a, int b,int c,String d,int f){
+    private String name;
+    private int age;
+    private long worth;
+    private String mainSport;
+    private int image;
+    private String wiki;
+
+    public Player(String a, int b,long c,String d,int f,String w){
         name=a;
         age=b;
         worth=c;
         mainSport=d;
         image=f;
+        wiki=w;
     }
-    private String name;
-    private int age;
-    private int worth;
-    private String mainSport;
-    private int image;
+
     public String getName(){
 
         return name;
@@ -21,8 +25,7 @@ public class Player {
 
         return age;
     }
-    public int getWorth(){
-
+    public long getWorth(){
         return worth;
     }
     public String getMainsport(){
@@ -33,6 +36,7 @@ public class Player {
 
         return image;
     }
+    public String getwiki(){return wiki;}
     public void setName(String s){
 
         name=s;
@@ -41,10 +45,7 @@ public class Player {
 
         age=s;
     }
-    public void setWorth(int s){
-
-        worth=s;
-    }
+    public void setWorth(int s){ worth=s; }
     public void setMainSport(String s){
 
         mainSport=s;
@@ -53,6 +54,8 @@ public class Player {
 
         image=s;
     }
+    public void setwiki (String w){wiki=w;}
+
 
 
 
