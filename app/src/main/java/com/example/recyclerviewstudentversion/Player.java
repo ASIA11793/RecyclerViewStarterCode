@@ -26,7 +26,9 @@ public class Player {
         return age;
     }
     public long getWorth(){
+
         return worth;
+
     }
     public String getMainsport(){
         
@@ -36,7 +38,10 @@ public class Player {
 
         return image;
     }
-    public String getwiki(){return wiki;}
+    public String getwiki(){
+
+        return wiki;
+    }
     public void setName(String s){
 
         name=s;
@@ -45,7 +50,10 @@ public class Player {
 
         age=s;
     }
-    public void setWorth(int s){ worth=s; }
+    public void setWorth(int s){
+
+        worth=s;
+    }
     public void setMainSport(String s){
 
         mainSport=s;
@@ -54,7 +62,9 @@ public class Player {
 
         image=s;
     }
-    public void setwiki (String w){wiki=w;}
+    public void setwiki (String w){
+        wiki=w;
+    }
 
 
 
