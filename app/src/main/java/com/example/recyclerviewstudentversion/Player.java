@@ -18,32 +18,48 @@ public class Player {
     }
 
     public String getName(){
+
         return name;
     }
     public int getage(){
+
         return age;
     }
-    public long getWorth(){
+
+    public int getWorth(){
+
+
         return worth;
     }
     public String getMainsport(){
+        
         return mainSport;
     }
     public int getImage(){
+
         return image;
     }
     public String getwiki(){return wiki;}
     public void setName(String s){
+
         name=s;
     }
     public void setAge(int s){
+
         age=s;
     }
-    public void setWorth(int s){ worth=s; }
+
+    public void setWorth(int s){
+
+        worth=s;
+    }
+
     public void setMainSport(String s){
+
         mainSport=s;
     }
     public void setImage(int s){
+
         image=s;
     }
     public void setwiki (String w){wiki=w;}
