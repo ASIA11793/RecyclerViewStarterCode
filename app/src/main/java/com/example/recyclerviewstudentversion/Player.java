@@ -27,7 +27,7 @@ public class Player {
     }
 
 
-    public int getWorth(){
+    public long getWorth(){
 
 
 
