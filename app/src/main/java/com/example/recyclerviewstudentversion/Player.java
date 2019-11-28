@@ -25,7 +25,11 @@ public class Player {
 
         return age;
     }
-    public long getWorth(){
+
+
+    public int getWorth(){
+
+
 
         return worth;
 
@@ -50,10 +54,12 @@ public class Player {
 
         age=s;
     }
+
     public void setWorth(int s){
 
         worth=s;
     }
+
     public void setMainSport(String s){
 
         mainSport=s;
