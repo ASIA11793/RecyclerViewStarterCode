@@ -1,9 +1,11 @@
 package com.example.recyclerviewstudentversion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,7 +33,24 @@ public class MainActivity extends AppCompatActivity {
         layoutManager=new GridLayoutManager(this,1);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
+        ItemTouchHelper ith=new ItemTouchHelper(
+                new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP|ItemTouchHelper.DOWN,ItemTouchHelper.LEFT) {
+                    @Override
+                    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                       final int from=viewHolder.getAdapterPosition();
+                       final int to=target.getAdapterPosition();
+                       mAdapter.notifyItemMoved(from,to);
+                       return true;
+                    }
 
+                    @Override
+                    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+                    }
+                }
+        );
+
+        ith.attachToRecyclerView(recyclerView);
     }
 
 
