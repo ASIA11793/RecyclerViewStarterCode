@@ -2,6 +2,8 @@ package com.example.recyclerviewstudentversion;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,11 +43,15 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     @Override
     public MyRecyclerAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if (view == null)
-            view = inflater.inflate(R.layout.single_item, null);
-        return new MyViewHolder(view);
+        Context context = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(context);
 
+        // Inflate the custom layout
+        View contactView = inflater.inflate(R.layout.single_item, parent, false);
+
+        // Return a new holder instance
+        MyViewHolder viewHolder = new MyViewHolder(contactView);
+        return viewHolder;
 }
 
     @Override
@@ -59,9 +65,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     }
 
+
+
+
     @Override
     public int getItemCount() {
-
         return listofPlayers.size();
     }
 

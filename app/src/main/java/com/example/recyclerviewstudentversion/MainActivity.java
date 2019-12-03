@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        list=new ArrayList<Player>();
         fillplayers();
         recyclerView=findViewById(R.id.recy);
        mAdapter=new MyRecyclerAdapter(list);
