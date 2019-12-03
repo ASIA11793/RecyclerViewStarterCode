@@ -30,7 +30,6 @@ public class Player {
     public long getWorth(){
 
 
-
         return worth;
 
     }

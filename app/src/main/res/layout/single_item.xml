@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    android:weightSum="8">
+
 
     <ImageView
-        android:id="@+id/pic"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:id="@+id/ima"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/name"
         />
     <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="name"
-        android:textSize="30dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="200dp"/>
-    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="age"
-        android:textSize="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="200dp"/>
+        />
     <TextView
-        android:id="@+id/worth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="worth"
-        android:textSize="30dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="200dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/money"
+        />
     <TextView
-        android:id="@+id/main_sport"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="main_sport"
-        android:textSize="30dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginLeft="200dp"/>
-
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/sport"
+        />
 </LinearLayout>

@@ -2,6 +2,8 @@ package com.example.recyclerviewstudentversion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,11 +24,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        list=new ArrayList<Player>();
         fillplayers();
         recyclerView=findViewById(R.id.recy);
-       // mAdapter=new MyRecyclerAdapter(list);
+       mAdapter=new MyRecyclerAdapter(list);
         layoutManager=new GridLayoutManager(this,1);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(mAdapter);
 
     }
 
