@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="300dp"
     android:weightSum="8">
     <ImageView
         android:layout_margin="10dp"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="125dp"
         android:layout_weight="4"
         android:id="@+id/ima"
@@ -14,32 +14,32 @@
     <LinearLayout
         android:id="@+id/layout2"
         android:layout_width="100dp"
+        android:layout_weight="4"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
 
 
     <TextView
-        android:layout_width="100dp"
-
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_weight="1"
         android:id="@+id/name"
         />
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_weight="1"
         android:id="@+id/age"
         />
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_weight="1"
         android:id="@+id/money"
         />
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_weight="1"
         android:id="@+id/sport"
