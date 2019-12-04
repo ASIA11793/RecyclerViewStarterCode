@@ -11,8 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 // Todo create a player class that will hold info about the player
 public class MainActivity extends AppCompatActivity {
@@ -39,13 +43,27 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                        final int from=viewHolder.getAdapterPosition();
                        final int to=target.getAdapterPosition();
+                        Collections.swap(list,from,to);
                        mAdapter.notifyItemMoved(from,to);
                        return true;
                     }
 
                     @Override
                     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-
+                        final int position=viewHolder.getAdapterPosition();
+                        final Player gone=list.get(position);
+                        switch(direction){
+                            case ItemTouchHelper.LEFT:
+                                list.remove(position);
+                                mAdapter.notifyItemRemoved(position);
+                                Snackbar.make(recyclerView,"swipe left",Snackbar.LENGTH_SHORT).setAction("Undo",new View.OnClickListener(){
+                                    @Override
+                                    public void onClick(View view) {
+                                        list.add(position,gone);
+                                        mAdapter.notifyItemInserted(position);
+                                    }
+                                }).show();
+                        }
                     }
                 }
         );
