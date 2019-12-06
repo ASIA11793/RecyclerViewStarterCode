@@ -11,7 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -25,6 +29,38 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     List<Player> list;
+
+
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        MenuItem item=menu.getItem(R.id.hh);
+       SearchView searchView=(SearchView) item.getActionView();
+       searchView.setQueryHint("search");
+       searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+           @Override
+           public boolean onQueryTextSubmit(String s) {
+               return false;
+           }
+
+
+           @Override
+           public boolean onQueryTextChange(String s) {
+               //filter now
+               return false;
+           }
+       });
+        return true;
+    }
+
+
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
