@@ -26,7 +26,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     // Todo initialize these variables
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private MyRecyclerAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     List<Player> list;
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public boolean onQueryTextChange(String s) {
                mAdapter.getFilter().filter(s);
-               //filter now
+                           //filter now
                return true;
            }
        });
