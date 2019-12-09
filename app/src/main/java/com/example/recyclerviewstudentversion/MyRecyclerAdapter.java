@@ -7,21 +7,56 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // Todo Implement methods required
 //onCreateViewHolder()
 //onBindViewHolder
 //getItemCount
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder> {
+public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder>implements Filterable {
     private View view;
     private List<Player> listofPlayers;
+    private List<Player> filterList;
+
+
+    public Filter getFilter(){
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+                if(charString.isEmpty()){
+                    filterList=listofPlayers;
+                }
+                else{
+                    List<Player> filteredList=new ArrayList<>();
+                    for(Player row : listofPlayers){
+                        if(row.getName().toLowerCase().contains(charString)||row.getName().contains(charString)){//need simplification
+                            filteredList.add(row);
+
+                        }
+
+                    }
+                    filterList=filteredList;
+                }
+
+                return null;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+
+            }
+        };
+    }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name, age, worth,sport;
