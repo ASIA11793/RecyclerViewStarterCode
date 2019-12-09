@@ -23,7 +23,6 @@ import java.util.List;
 //onBindViewHolder
 //getItemCount
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder>implements Filterable {
-    private View view;
     private List<Player> listofPlayers;
     private List<Player> filterList;
 
@@ -47,13 +46,16 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
                     }
                     filterList=filteredList;
                 }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = filterList;
+                return filterResults;
 
-                return null;
             }
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
+                    filterList=(ArrayList<Player>)filterResults.values;
+                     notifyDataSetChanged();
             }
         };
     }
@@ -72,7 +74,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     }
 
     public MyRecyclerAdapter(List<Player> Players1) {
-        this.listofPlayers = Players1;
+        listofPlayers = Players1;
+        filterList=Players1;
     }
 
 
@@ -91,11 +94,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.name.setText("name "+listofPlayers.get(position).getName());
-        holder.age.setText("age"+listofPlayers.get(position).getage());
-        holder.worth.setText("worth"+listofPlayers.get(position).getWorth());
-        holder.sport.setText("sport"+listofPlayers.get(position).getMainsport());
-        holder.img.setImageResource(listofPlayers.get(position).getImage());
+        holder.name.setText("name "+filterList.get(position).getName());
+        holder.age.setText("age"+filterList.get(position).getage());
+        holder.worth.setText("worth"+filterList.get(position).getWorth());
+        holder.sport.setText("sport"+filterList.get(position).getMainsport());
+        holder.img.setImageResource(filterList.get(position).getImage());
 
 
     }
@@ -105,7 +108,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     @Override
     public int getItemCount() {
-        return listofPlayers.size();
+        return filterList.size();
     }
 
 
