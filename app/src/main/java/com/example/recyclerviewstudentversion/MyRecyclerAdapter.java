@@ -38,7 +38,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
                 else{
                     List<Player> filteredList=new ArrayList<>();
                     for(Player row : listofPlayers){
-                        if(row.getName().toLowerCase().indexOf(charString)==0||row.getName().indexOf(charString)==0){//need simplification
+                        if(row.getName().toLowerCase().contains(charString)||row.getName().contains(charString)){//need simplification
                             filteredList.add(row);
 
                         }
