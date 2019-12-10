@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,19 +34,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater=getMenuInflater();
+   public boolean onCreateOptionsMenu(Menu menu){
+       /* MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
         MenuItem item=menu.getItem(R.id.hh);
        SearchView searchView=(SearchView) item.getActionView();
-       searchView.setQueryHint("search");
+       searchView.setQueryHint("search");*/
+       getMenuInflater().inflate(R.menu.menu, menu);
+       // Associate searchable configuration with the SearchView
+       SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+       SearchView searchView = (SearchView) menu.findItem(R.id.hh)
+               .getActionView();
+       searchView.setSearchableInfo(searchManager
+               .getSearchableInfo(getComponentName()));
+       searchView.setMaxWidth(Integer.MAX_VALUE);
        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
            @Override
            public boolean onQueryTextSubmit(String s) {
 
                return false;
            }
-
 
            @Override
            public boolean onQueryTextChange(String s) {
@@ -85,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
                        mAdapter.notifyItemMoved(from,to);
                        return true;
                     }
-
                     @Override
                     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                         final int position=viewHolder.getAdapterPosition();
@@ -114,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             list.add(new Player("Usain St Leo Bolt",33,(long)90000000,"Track and Field",R.drawable.bolt,"https://en.wikipedia.org/wiki/Usain_Bolt"));
             list.add(new Player("Kobe Bryant",41,(long)500000000,"Basketball",R.drawable.kobe,"https://en.wikipedia.org/wiki/Kobe_Bryant"));
             list.add(new Player("Lionel Andrés Messi Cuccittini",32,(long)400000000,"Football",R.drawable.mesi,"https://en.wikipedia.org/wiki/Lionel_Messi"));
-            list.add(new Player("Cristiano Ronaldo dos Santos Aveiro",34,(long)108000000,"Football",R.drawable.ronaldo,"https://en.wikipedia.org/wiki/Cristiano_Ronaldo"));
+            list.add(new Player("Cristiano Aveiro",34,(long)108000000,"Football",R.drawable.ronaldo,"https://en.wikipedia.org/wiki/Cristiano_Ronaldo"));
             list.add(new Player("Niels Bohr",134,(long)5000000,"Football",R.drawable.niels,"https://en.wikipedia.org/wiki/Niels_Bohr"));
             list.add(new Player("Harald Bohr",132,(long)5000000,"Football",R.drawable.bohr,"https://en.wikipedia.org/wiki/Harald_Bohr"));
             list.add(new Player("AlphaGo",4,(long)35000000,"Go",R.drawable.alphago,"https://en.wikipedia.org/wiki/AlphaGo"));

@@ -38,7 +38,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
                 else{
                     List<Player> filteredList=new ArrayList<>();
                     for(Player row : listofPlayers){
-                        if(row.getName().toLowerCase().contains(charString)||row.getName().contains(charString)){//need simplification
+                        if(row.getName().toLowerCase().indexOf(charString)==0||row.getName().indexOf(charString)==0){//need simplification
                             filteredList.add(row);
 
                         }
@@ -94,7 +94,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.name.setText("name "+filterList.get(position).getName());
+        holder.name.setText(filterList.get(position).getName());
         holder.age.setText("age"+filterList.get(position).getage());
         holder.worth.setText("worth"+filterList.get(position).getWorth());
         holder.sport.setText("sport"+filterList.get(position).getMainsport());
